@@ -8,3 +8,6 @@
 # System / editor
 .DS_Store
 node_modules/
+
+# Notas de referencia locales
+*.txt
