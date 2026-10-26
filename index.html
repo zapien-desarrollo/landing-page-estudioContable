@@ -1,0 +1,430 @@
+<!doctype html>
+<html lang="es-AR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Estudio Cerro · Contadores Públicos en Mendoza</title>
+  <meta name="description" content="Monotributo, IVA, Ingresos Brutos, Ganancias y sueldos. Abonos mensuales para monotributistas, responsables inscriptos y pymes en Mendoza." />
+  <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="demo-bar">
+    Sitio de demostración desarrollado por <a href="https://landing-page-josequispe.vercel.app" target="_blank" rel="noopener">Jose Quispe</a>. Estudio, precios y datos ficticios.
+  </div>
+
+  <header class="header header--solid" id="header">
+    <div class="container header__inner">
+      <a class="brand" href="#inicio" aria-label="Estudio Cerro, inicio">
+        <svg class="brand__mark" viewBox="0 0 32 32" aria-hidden="true"><path d="M2 26 12 10l5 8 4-5 9 13Z" fill="currentColor"/><circle cx="24" cy="7" r="3" fill="var(--accent)"/></svg>
+        <span>Estudio <b>Cerro</b></span>
+      </a>
+      <button class="nav-toggle" aria-label="Abrir menú" aria-expanded="false" aria-controls="nav"><span></span></button>
+      <nav class="nav" id="nav">
+        <a href="#servicios">Servicios</a>
+        <a href="#planes">Abonos</a>
+        <a href="#vencimientos">Vencimientos</a>
+        <a href="#estudio">El estudio</a>
+        <a href="#contacto">Contacto</a>
+        <a class="btn btn--accent btn--sm" href="#contacto">Pedí tu consulta</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="inicio">
+    <!-- HERO -->
+    <section class="hero">
+      <div class="container hero__grid">
+        <div class="hero__text">
+          <p class="eyebrow">Contadores públicos · Mendoza</p>
+          <h1>Tus impuestos al día, <em>sin sorpresas</em></h1>
+          <p class="hero__lead">Llevamos el monotributo, el IVA, Ingresos Brutos y los sueldos de tu negocio por un abono mensual fijo. Vos te dedicás a trabajar; los vencimientos los miramos nosotros.</p>
+          <div class="btn-row">
+            <button class="btn btn--primary" data-demo="En el sitio real se abre WhatsApp con un mensaje ya escrito para el estudio.">
+              <svg class="icon"><use href="#i-wa"/></svg> Consultar por WhatsApp
+            </button>
+            <a class="btn btn--ghost" href="#planes">Ver abonos</a>
+          </div>
+          <ul class="hero__checks">
+            <li><svg class="icon"><use href="#i-check"/></svg> Primera consulta sin cargo</li>
+            <li><svg class="icon"><use href="#i-check"/></svg> Respuesta en el día</li>
+            <li><svg class="icon"><use href="#i-check"/></svg> 100 % online o presencial</li>
+          </ul>
+        </div>
+        <div class="hero__visual">
+          <img src="https://images.unsplash.com/photo-1554224155-6726b3ff858f?auto=format&fit=crop&w=1100&q=70" alt="Formularios de impuestos y calculadora sobre un escritorio" fetchpriority="high" />
+          <div class="float-card" id="next-due" aria-live="polite">
+            <span class="float-card__icon"><svg class="icon"><use href="#i-calendar"/></svg></span>
+            <div>
+              <small>Próximo vencimiento</small>
+              <b id="next-due-name"></b>
+              <span id="next-due-date"></span>
+            </div>
+          </div>
+          <div class="float-card float-card--ok">
+            <span class="float-card__icon"><svg class="icon"><use href="#i-check"/></svg></span>
+            <div>
+              <small>Declaración jurada</small>
+              <b>IVA presentado</b>
+              <span>Hace 2 minutos</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CIFRAS -->
+    <section class="stats">
+      <div class="container stats__grid">
+        <div><strong data-count="18">0</strong><span>años de trayectoria</span></div>
+        <div><strong data-count="650" data-plus>0</strong><span>clientes activos</span></div>
+        <div><strong data-count="0">0</strong><span>vencimientos perdidos este año</span></div>
+        <div><strong data-count="24" data-suffix=" h">0</strong><span>tiempo máximo de respuesta</span></div>
+      </div>
+    </section>
+
+    <!-- PARA QUIÉN -->
+    <section class="section" id="servicios">
+      <div class="container">
+        <div class="section__head section__head--center">
+          <p class="eyebrow">Servicios</p>
+          <h2>¿En qué situación estás?</h2>
+          <p class="muted section__lead">Elegí tu perfil y te mostramos qué hacemos por vos y qué abono te conviene.</p>
+        </div>
+
+        <div class="profiles">
+          <div class="profiles__tabs" role="tablist" aria-label="Perfil">
+            <button class="profiles__tab is-active" role="tab" aria-selected="true" aria-controls="profile-panel" data-profile="mono">
+              <svg class="icon"><use href="#i-user"/></svg> Monotributista
+            </button>
+            <button class="profiles__tab" role="tab" aria-selected="false" aria-controls="profile-panel" data-profile="ri">
+              <svg class="icon"><use href="#i-doc"/></svg> Responsable inscripto
+            </button>
+            <button class="profiles__tab" role="tab" aria-selected="false" aria-controls="profile-panel" data-profile="pyme">
+              <svg class="icon"><use href="#i-building"/></svg> Pyme o sociedad
+            </button>
+            <button class="profiles__tab" role="tab" aria-selected="false" aria-controls="profile-panel" data-profile="empleador">
+              <svg class="icon"><use href="#i-team"/></svg> Tengo empleados
+            </button>
+          </div>
+          <div class="profiles__panel card" id="profile-panel" role="tabpanel">
+            <div>
+              <h3 id="profile-title"></h3>
+              <p class="muted" id="profile-desc"></p>
+              <a class="btn btn--primary btn--sm" href="#planes" id="profile-cta"></a>
+            </div>
+            <ul class="checks" id="profile-list"></ul>
+          </div>
+        </div>
+
+        <div class="svc-grid">
+          <article class="svc">
+            <svg class="icon icon--lg"><use href="#i-user"/></svg>
+            <h3>Monotributo</h3>
+            <p>Alta, recategorización semestral, facturación electrónica y baja. Te avisamos antes de que te pases de categoría.</p>
+          </article>
+          <article class="svc">
+            <svg class="icon icon--lg"><use href="#i-percent"/></svg>
+            <h3>IVA e Ingresos Brutos</h3>
+            <p>Declaraciones juradas mensuales, Convenio Multilateral, retenciones y percepciones. Siempre en fecha.</p>
+          </article>
+          <article class="svc">
+            <svg class="icon icon--lg"><use href="#i-chart"/></svg>
+            <h3>Ganancias y Bienes Personales</h3>
+            <p>Planificación anual para pagar lo justo, anticipos y presentación de declaraciones juradas de personas y empresas.</p>
+          </article>
+          <article class="svc">
+            <svg class="icon icon--lg"><use href="#i-team"/></svg>
+            <h3>Liquidación de sueldos</h3>
+            <p>Recibos, F.931, altas y bajas de personal, sindicatos y obras sociales. Según el convenio de tu actividad.</p>
+          </article>
+          <article class="svc">
+            <svg class="icon icon--lg"><use href="#i-book"/></svg>
+            <h3>Contabilidad y balances</h3>
+            <p>Registración, estados contables, certificaciones de ingresos e informes de gestión para tomar decisiones.</p>
+          </article>
+          <article class="svc">
+            <svg class="icon icon--lg"><use href="#i-building"/></svg>
+            <h3>Sociedades</h3>
+            <p>Constitución de SAS y SRL, inscripción en AFIP y Rentas, libros societarios y asambleas.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ABONOS -->
+    <section class="section section--tint" id="planes">
+      <div class="container">
+        <div class="section__head section__head--center">
+          <p class="eyebrow">Abonos mensuales</p>
+          <h2>Un precio fijo, sin letra chica</h2>
+          <div class="billing" role="group" aria-label="Forma de pago">
+            <button class="billing__opt is-active" data-billing="mensual" aria-pressed="true">Mensual</button>
+            <button class="billing__opt" data-billing="anual" aria-pressed="false">Anual <span class="badge badge--accent">-15 %</span></button>
+          </div>
+        </div>
+        <div class="plans" id="plans"></div>
+        <p class="plans__note muted">Precios finales en pesos, IVA incluido. ¿Necesitás algo puntual? <a href="#contacto">Pedí un presupuesto</a>.</p>
+      </div>
+    </section>
+
+    <!-- CALCULADORA MONOTRIBUTO -->
+    <section class="section" id="calculadora">
+      <div class="container tool">
+        <div>
+          <p class="eyebrow">Herramienta gratuita</p>
+          <h2>¿En qué categoría de monotributo estás?</h2>
+          <p>Cargá lo que facturaste en los últimos 12 meses y te decimos tu categoría y cuánto pagarías por mes. Si estás cerca del tope, te avisamos antes de que AFIP te excluya.</p>
+          <p class="muted small">Escala de ejemplo para la demo. En el sitio real se actualiza con los valores vigentes.</p>
+        </div>
+        <form class="card form" id="mono-calc">
+          <label class="field">
+            <span>Facturación de los últimos 12 meses</span>
+            <div class="money">
+              <span>$</span>
+              <input id="mono-income" inputmode="numeric" autocomplete="off" placeholder="Ej: 15.000.000" />
+            </div>
+          </label>
+          <label class="field">
+            <span>Actividad</span>
+            <select id="mono-type">
+              <option value="servicios">Servicios</option>
+              <option value="bienes">Venta de productos</option>
+            </select>
+          </label>
+          <div class="calc-result" id="mono-result" aria-live="polite">
+            <p class="muted">Ingresá un monto para ver tu categoría.</p>
+          </div>
+        </form>
+      </div>
+    </section>
+
+    <!-- VENCIMIENTOS -->
+    <section class="section section--dark" id="vencimientos">
+      <div class="container">
+        <div class="section__head">
+          <div>
+            <p class="eyebrow eyebrow--light">Calendario</p>
+            <h2>Vencimientos de <span id="cal-month"></span></h2>
+            <p class="cal-sub">Elegí la terminación de tu CUIT y mirá qué vence en el mes.</p>
+          </div>
+          <div class="cuit" role="group" aria-label="Terminación de CUIT" id="cuit"></div>
+        </div>
+        <ol class="cal" id="cal"></ol>
+        <div class="cal-foot">
+          <p>Fechas de referencia para la demo. Los clientes del estudio reciben un recordatorio por WhatsApp 3 días antes de cada vencimiento.</p>
+          <button class="btn btn--accent btn--sm" data-demo="Te suscribimos a los recordatorios por WhatsApp según tu terminación de CUIT.">
+            <svg class="icon"><use href="#i-bell"/></svg> Quiero recordatorios
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- CÓMO EMPEZAMOS -->
+    <section class="section" id="como">
+      <div class="container">
+        <div class="section__head section__head--center">
+          <p class="eyebrow">Cómo empezamos</p>
+          <h2>Pasarte con nosotros es simple</h2>
+        </div>
+        <ol class="steps">
+          <li>
+            <span class="steps__n">1</span>
+            <h3>Charla inicial</h3>
+            <p>Nos contás tu actividad y revisamos tu situación en AFIP y Rentas. Sin costo.</p>
+          </li>
+          <li>
+            <span class="steps__n">2</span>
+            <h3>Propuesta</h3>
+            <p>Te pasamos el abono que te corresponde y qué incluye, por escrito.</p>
+          </li>
+          <li>
+            <span class="steps__n">3</span>
+            <h3>Nos hacemos cargo</h3>
+            <p>Pedimos las claves con tu autorización y ordenamos lo que haya pendiente.</p>
+          </li>
+          <li>
+            <span class="steps__n">4</span>
+            <h3>Todos los meses</h3>
+            <p>Te mandamos los VEP para pagar y el resumen de lo presentado. Nada más.</p>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- EL ESTUDIO -->
+    <section class="section section--tint" id="estudio">
+      <div class="container about">
+        <div class="about__media">
+          <img src="https://images.unsplash.com/photo-1551836022-d5d88e9218df?auto=format&fit=crop&w=1000&q=70" alt="Reunión con una clienta en el estudio" loading="lazy" />
+        </div>
+        <div>
+          <p class="eyebrow">El estudio</p>
+          <h2>Contadores que te explican, no que te complican</h2>
+          <p>Somos un equipo de contadores públicos matriculados en el Consejo Profesional de Ciencias Económicas de Mendoza. Trabajamos con monotributistas, profesionales, comercios y pymes, con atención personalizada y respuestas en lenguaje claro.</p>
+          <div class="team">
+            <div class="person"><span class="avatar">MS</span><div><b>Cra. Mariana Suárez</b><small>Socia · Impuestos y sociedades · Mat. 5678</small></div></div>
+            <div class="person"><span class="avatar">PA</span><div><b>Cr. Pablo Arce</b><small>Socio · Contabilidad y balances</small></div></div>
+            <div class="person"><span class="avatar">VL</span><div><b>Valentina López</b><small>Liquidación de sueldos</small></div></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="container">
+        <div class="testimonials">
+          <blockquote class="testimonial">
+            <div class="stars" aria-label="5 de 5 estrellas">★★★★★</div>
+            <p>“Estaba atrasada con el monotributo y en dos semanas me pusieron todo en regla. Ahora solo pago el VEP que me mandan.”</p>
+            <footer>Lucía P. · Diseñadora</footer>
+          </blockquote>
+          <blockquote class="testimonial">
+            <div class="stars" aria-label="5 de 5 estrellas">★★★★★</div>
+            <p>“Nos liquidan los sueldos de 12 empleados y nunca tuvimos un error. Responden el WhatsApp rapidísimo.”</p>
+            <footer>Gustavo M. · Distribuidora</footer>
+          </blockquote>
+          <blockquote class="testimonial">
+            <div class="stars" aria-label="5 de 5 estrellas">★★★★★</div>
+            <p>“Armaron la SAS y nos explicaron en simple cómo pasar a responsable inscripto sin perder plata.”</p>
+            <footer>Bodega Los Ceibos · Maipú</footer>
+          </blockquote>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="section" id="preguntas">
+      <div class="container container--narrow">
+        <div class="section__head section__head--center">
+          <p class="eyebrow">Preguntas frecuentes</p>
+          <h2>Lo que más nos consultan</h2>
+        </div>
+        <div class="faq">
+          <details>
+            <summary>¿Cuánto cuesta la primera consulta?</summary>
+            <p>Nada. La primera charla es gratis, por WhatsApp, videollamada o en el estudio. Revisamos tu situación y te decimos qué abono te corresponde.</p>
+          </details>
+          <details>
+            <summary>Estoy atrasado con el monotributo, ¿qué hago?</summary>
+            <p>Lo primero es ver cuánto debés y si te conviene un plan de pagos. Muchas veces se puede regularizar sin perder la categoría. Escribinos y lo revisamos.</p>
+          </details>
+          <details>
+            <summary>¿Me conviene pasar a responsable inscripto?</summary>
+            <p>Depende de cuánto facturás, a quién le vendés y tus gastos. Hacemos la cuenta con tus números reales antes de que des el paso.</p>
+          </details>
+          <details>
+            <summary>¿Tengo que ir al estudio?</summary>
+            <p>No hace falta. Trabajamos con clientes de toda la provincia de forma 100 % online. Si preferís venir, te esperamos en la oficina.</p>
+          </details>
+          <details>
+            <summary>¿Qué pasa si quiero darme de baja del abono?</summary>
+            <p>Avisás con 30 días y listo. No hay permanencia mínima ni costo de salida.</p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACTO -->
+    <section class="section section--tint" id="contacto">
+      <div class="container contact">
+        <div>
+          <p class="eyebrow">Contacto</p>
+          <h2>Contanos tu situación</h2>
+          <ul class="contact__list">
+            <li><svg class="icon"><use href="#i-pin"/></svg> Av. España 1250, piso 3, Ciudad de Mendoza</li>
+            <li><svg class="icon"><use href="#i-phone"/></svg> (261) 400-0000</li>
+            <li><svg class="icon"><use href="#i-mail"/></svg> consultas@estudiocerro.com.ar</li>
+            <li><svg class="icon"><use href="#i-clock"/></svg> Lunes a viernes de 9 a 18 h</li>
+          </ul>
+          <div class="map">
+            <iframe title="Mapa del estudio" loading="lazy" src="https://www.openstreetmap.org/export/embed.html?bbox=-68.850%2C-32.897%2C-68.834%2C-32.885&amp;layer=mapnik&amp;marker=-32.891%2C-68.842"></iframe>
+          </div>
+        </div>
+        <form class="card form" data-demo-form="¡Gracias! Recibimos tu consulta. Un contador te responde hoy mismo.">
+          <h3>Pedí tu consulta sin cargo</h3>
+          <div class="form__grid">
+            <label class="field"><span>Nombre</span><input required name="nombre" autocomplete="name" /></label>
+            <label class="field"><span>Teléfono</span><input required name="tel" type="tel" autocomplete="tel" /></label>
+          </div>
+          <label class="field">
+            <span>Situación fiscal</span>
+            <select name="perfil" id="contact-profile">
+              <option>Monotributista</option>
+              <option>Responsable inscripto</option>
+              <option>Pyme o sociedad</option>
+              <option>Todavía no estoy inscripto</option>
+            </select>
+          </label>
+          <label class="field"><span>¿En qué te podemos ayudar?</span><textarea name="mensaje" rows="4" placeholder="Ej: quiero darme de alta en el monotributo"></textarea></label>
+          <button class="btn btn--primary btn--block" type="submit">Enviar consulta</button>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer__grid">
+      <div>
+        <a class="brand brand--light" href="#inicio">
+          <svg class="brand__mark" viewBox="0 0 32 32" aria-hidden="true"><path d="M2 26 12 10l5 8 4-5 9 13Z" fill="currentColor"/><circle cx="24" cy="7" r="3" fill="var(--accent)"/></svg>
+          <span>Estudio <b>Cerro</b></span>
+        </a>
+        <p>Contadores públicos matriculados · CPCE Mendoza.</p>
+      </div>
+      <div>
+        <h4>Servicios</h4>
+        <ul>
+          <li><a href="#servicios">Monotributo</a></li>
+          <li><a href="#servicios">IVA e Ingresos Brutos</a></li>
+          <li><a href="#servicios">Sueldos</a></li>
+          <li><a href="#servicios">Sociedades</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Herramientas</h4>
+        <ul>
+          <li><a href="#calculadora">Calculadora de monotributo</a></li>
+          <li><a href="#vencimientos">Vencimientos del mes</a></li>
+          <li><a href="#planes">Abonos</a></li>
+          <li><a href="#preguntas">Preguntas frecuentes</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Seguinos</h4>
+        <ul>
+          <li><a href="#" data-demo="Acá va el link a Instagram del estudio.">Instagram</a></li>
+          <li><a href="#" data-demo="Acá va el link a LinkedIn del estudio.">LinkedIn</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="container footer__bottom">
+      <span>© 2026 Estudio Cerro. Sitio de demostración.</span>
+      <span>Diseño y desarrollo: <a href="https://landing-page-josequispe.vercel.app" target="_blank" rel="noopener">Jose Quispe</a></span>
+    </div>
+  </footer>
+
+  <button class="wa-float" data-demo="En el sitio real, este botón abre WhatsApp con un mensaje ya escrito." aria-label="Escribinos por WhatsApp">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-wa"/></svg>
+  </button>
+
+  <dialog class="checkout" id="checkout">
+    <form method="dialog" class="checkout__inner">
+      <button class="checkout__close" value="cancel" aria-label="Cerrar">×</button>
+      <p class="eyebrow">Contratar abono</p>
+      <h3 id="co-plan"></h3>
+      <dl class="checkout__sum">
+        <div><dt>Facturación</dt><dd id="co-billing"></dd></div>
+        <div><dt>Total</dt><dd id="co-total"></dd></div>
+      </dl>
+      <label class="field"><span>Email</span><input type="email" id="co-email" autocomplete="email" placeholder="tu@email.com" /></label>
+      <label class="field"><span>CUIT</span><input id="co-cuit" inputmode="numeric" placeholder="20-12345678-9" /></label>
+      <button class="btn btn--mp btn--block" value="pay" id="co-pay">Pagar con Mercado Pago</button>
+      <p class="muted small">Pago simulado: en la demo no se cobra nada.</p>
+    </form>
+  </dialog>
+
+  <script src="main.js"></script>
+</body>
+</html>
